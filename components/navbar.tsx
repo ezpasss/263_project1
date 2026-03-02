@@ -12,12 +12,6 @@ const tabsBar = () => {
 					</Link>
 				</li>
 
-				<li className="nav-item">
-					<Link className="nav-link" href="/">
-						Favorites CHECK IF USER IS LOGGED IN
-					</Link>
-				</li>
-
 				<li className="nav-item dropdown">
 				<button className="nav-link dropdown-toggle">
 					Categories

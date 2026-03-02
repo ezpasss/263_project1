@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import TabsBar from "@/components/navbar";
 import "leaflet/dist/leaflet.css"; 
+import FirebaseBoot from "@/components/firebaseBoot";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,6 +30,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <FirebaseBoot />
         <TabsBar />
         {children}
       </body>

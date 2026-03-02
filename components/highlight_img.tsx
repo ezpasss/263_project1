@@ -1,24 +1,56 @@
+'use client';
+import { useState, useEffect } from "react";
+import { getStorage, ref, getDownloadURL } from "firebase/storage"; 
+
 type HighlightSectionProps = {
-  imageUrl: string;
+  imageurl: string; 
   title: string;
-  description: string;
 };
 
 export default function HighlightSection({
-  imageUrl,
+  imageurl, 
   title,
-  description,
 }: HighlightSectionProps) {
-  return (
-    <section className="highlight-row">
-      <div className="highlight-text">
-        <h2>{title}</h2>
-        <p>{description}</p>
-      </div>
 
-      <div className="highlight-image">
-        <img src={imageUrl} alt={title} />
-      </div>
-    </section>
+  const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchImageDownloadUrl = async () => {
+      setLoading(true);
+      setError(null); 
+      try {
+        const storage = getStorage();
+        const imageRef = ref(storage, imageurl); 
+
+        const url = await getDownloadURL(imageRef);
+        setDownloadUrl(url);
+      } catch (err: any) {
+        console.error("Error fetching highlight image:", err);
+        setError("Failed to load image.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+
+    if (imageurl) {
+      fetchImageDownloadUrl();
+    } else {
+      setDownloadUrl(null);
+      setLoading(false);
+      setError("No image path provided.");
+    }
+  }, [imageurl]); 
+
+  return (
+    <div className="highlight-image">
+      {loading && <p>Loading image...</p>}
+      {error && <p style={{ color: 'red' }}>{error}</p>}
+      {downloadUrl && !loading && !error && (
+        <img className="highlight-photo"src={downloadUrl} alt={title} />
+      )}
+    </div>
   );
 }

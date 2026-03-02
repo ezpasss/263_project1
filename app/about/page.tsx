@@ -9,9 +9,10 @@ export default function AboutPage() {
   const [email, setEmail] = useState("");
   const [description, setDescription] = useState("");
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault(); 
 
+    // try to add the contact message to firebase, if fails displays why
     try {
       await addDoc(collection(db, "contact_messages"), {
         firstName: firstName,

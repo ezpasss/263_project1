@@ -1,5 +1,3 @@
-
-import Link from "next/link";
 import HighlightSection from "@/components/highlight_img";
 
 export default function Home() {
@@ -25,19 +23,18 @@ export default function Home() {
 
             <div className="highlight-text">
               <h2>Astro Photography</h2>
-              <p>BIO DESCRIPTION</p>
+              <p>Overlooking CanyonLands National Park the Milky way can be seen sprawling across the night sky.</p>
             </div>
           </section>
 
           <section className="highlight-row">
             <div className="highlight-text">
               <h2>Wildlife</h2>
-              <p>BIO DESCRIPTION</p>
+              <p>Up close and personal with all types of wildlife</p>
             </div>
 
-            <div className="highlight-image">
-              <img className="highlight-photo" src="/DSC_3954.jpg" alt="DSC_3954" />
-            </div>
+            <HighlightSection imageurl="Road Trip/glacier/DSC_3954.jpg" title="Stunning Landscape"/>
+
           </section>
 
           <section className="highlight-row">
@@ -47,14 +44,14 @@ export default function Home() {
 
             <div className="highlight-text">
               <h2>Landscapes</h2>
-              <p>BIO DESCRIPTION</p>
+              <p>Beautiful landscapes from around the United States</p>
             </div>
           </section>
 
           <section className="highlight-row">
             <div className="highlight-text">
               <h2>Portraits</h2>
-              <p>BIO DESCRIPTION</p>
+              <p>Personal portraits of individuals and families, if you are interested head to our contact page and put in a request!</p>
             </div>
 
             <div className="highlight-image">
