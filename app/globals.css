@@ -1,9 +1,15 @@
 @import "tailwindcss";
 
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
+
+html, body {
+  font-family: 'Inter', sans-serif;
+}
+
 
 @theme inline {
   --color-background: var(--background);
@@ -22,5 +28,141 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Verdana, sans-serif;
+}
+main {
+  max-width: 1400px;
+  margin: 0 auto;   
+  padding: 0 20px;  
+}
+
+/* navbar css */
+.nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin-left: 20px;           
+}
+
+.nav-link {
+  text-decoration: none;
+  display: inline-block;
+}
+.nav-link:hover {
+  background-color: #d3d3d3;   
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;            
+  padding: 10px 20px;           
+  background-color: var(--background);
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;      
+  left: 0;
+  list-style: none;
+  margin: 0;
+  padding: 8px 0;
+  background-color: #d3d3d3;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* highlight section css */
+.highlight-row {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 20px 0;   
+}
+
+.highlight-image {
+  flex: 2;
+  display: flex;
+  gap: 20px;
+}
+
+.highlight-text {
+  flex: 1;
+  min-width: 280px;
+  color: #222;
+  line-height: 1.7;
+}
+
+.highlight-text h2 {
+  font-size: 2rem;
+  
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.highlight-text p {
+  font-size: 1.1rem;
+}
+
+.highlight-photo {
+  width: 100%;
+  max-height: 800px;    
+  height: 800px;        
+  object-fit: cover;    
+  border-radius: 12px;
+  display: block;
+}
+
+/* Types page css */
+.box {
+  width: 200px;
+  height: 100px;
+  background-color: lightblue;
+  border: 2px solid blue;
+  padding: 10px;
+  margin: 10px;
+}
+
+/* Contact page css */
+.contact-image {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 12px;
+  margin: 0 auto 30px auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.contact-info {
+  margin-top: 30px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #1a73e8;
+}
+.contact-par {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+/* Map page css */
+.map-image {
+  width: 100%;
+  max-width: 1100px;
+  /* height: 700px; */
+  border-radius: 12px;
 }
