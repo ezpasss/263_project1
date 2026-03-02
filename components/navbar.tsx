@@ -8,7 +8,7 @@ const tabsBar = () => {
 			<ul className="nav nav-tabs justify-content-center nav-fill">
 				<li className="nav-item">
 					<Link className="nav-link" href="/">
-						Homies in the club
+						Home
 					</Link>
 				</li>
 
