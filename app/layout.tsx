@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import TabsBar from "@/components/navbar";
+import "leaflet/dist/leaflet.css"; 
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
