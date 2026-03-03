@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function TypesPage() {
   return (
   <main>
@@ -7,20 +9,22 @@ export default function TypesPage() {
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
       <div className="flex flex-col items-center"> 
         <h3 className="text-xl font-bold text-center">Type</h3>
-        <div className="box">Astrophotography</div>
-        <div className="box">Landscapes</div>
-        <div className="box">Wildlife</div>
-        <div className="box">Portraits</div>
+         <Link href="/categories/selected_Cat/astrophotography" className="box">Astrophotography</Link>
+         <Link href="/categories/selected_Cat/landscapes" className="box">Landscapes</Link>
+         <Link href="/categories/selected_Cat/wildlife" className="box">Wildlife</Link>
+         <Link href="/categories/selected_Cat/portraits" className="box">Portraits</Link>
       </div>
       <div className="flex flex-col items-center"> 
         <h3 className="text-xl font-bold text-center">Locations</h3>
-        <div className="box">Tonto Natural Bridge State Park</div>
-        <div className="box">Grand Canyon National Park</div>
-        <div className="box">Yellowstone National Park</div>
-        <div className="box">Arches National Park</div>
-        <div className="box">Grand Tetons National Park</div>
-        <div className="box">Glacier National Park</div>
-        <div className="box">Badlands National Park</div>
+         
+         <Link href="/categories/selected_Cat/arches" className="box">Arches National Park</Link>
+         <Link href="/categories/selected_Cat/badlands" className="box">Badlands National Park</Link>
+         <Link href="/categories/selected_Cat/canyonlands" className="box">Canyonlands National Park</Link>
+         <Link href="/categories/selected_Cat/tetons" className="box">Grand Tetons National Park</Link>
+         <Link href="/categories/selected_Cat/glacier" className="box">Glacier National Park</Link>
+         <Link href="/categories/selected_Cat/tonto" className="box">Tonto Natural Bridge State Park</Link>
+         <Link href="/categories/selected_Cat/yellowstone" className="box">Yellowstone National Park</Link>
+         
       </div>
     </div>
   </main>

@@ -4,6 +4,7 @@ import "./globals.css";
 import TabsBar from "@/components/navbar";
 import "leaflet/dist/leaflet.css"; 
 import FirebaseBoot from "@/components/firebaseBoot";
+import { ClerkProvider } from '@clerk/nextjs'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,14 +27,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <FirebaseBoot />
-        <TabsBar />
-        {children}
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        >
+          <FirebaseBoot />
+          <TabsBar />
+          {children}
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

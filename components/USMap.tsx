@@ -1,6 +1,7 @@
 "use client";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
+import Link from "next/link";
 import "leaflet/dist/leaflet.css";
 
 // had to do some googling to fix the leaflet icons, stack overflowed said this was the fix, and it worked so here we are
@@ -12,17 +13,17 @@ L.Icon.Default.mergeOptions({
 });
 
 const nationalParksData = [
-  { name: "Arches", lat: 38.68, lng: -109.57 },
-  { name: "Badlands", lat: 43.75, lng: -102.5 },
-  { name: "Biscayne", lat: 25.65, lng: -80.08 },
-  { name: "Canyonlands", lat: 38.2, lng: -109.93 },
-  { name: "Tonto Natural Bridge State Park", lat: 34.3348, lng: -111.4211 },
-  { name: "Glacier", lat: 48.8, lng: -114 },
-  { name: "Grand Canyon", lat: 36.06, lng: -112.14 },
-  { name: "Grand Teton", lat: 43.73, lng: -110.8 },
-  { name: "Rocky Mountain", lat: 40.4, lng: -105.58 },
-  { name: "Saguaro", lat: 32.25, lng: -110.5 },
-  { name: "Yellowstone", lat: 44.6, lng: -110.5 }];
+  { name: "Arches", lnk: '/categories/selected_Cat/arches', lat: 38.68, lng: -109.57 },
+  { name: "Badlands", lnk: '/categories/selected_Cat/badlands', lat: 43.75, lng: -102.5 },
+  { name: "Biscayne", lnk: '/categories', lat: 25.65, lng: -80.08 },
+  { name: "Canyonlands", lnk: '/categories/selected_Cat/canyonlands', lat: 38.2, lng: -109.93 },
+  { name: "Tonto Natural Bridge State Park", lnk: '/categories/selected_Cat/tonto', lat: 34.3348, lng: -111.4211 },
+  { name: "Glacier", lnk: '/categories/selected_Cat/glacier', lat: 48.8, lng: -114 },
+  { name: "Grand Canyon", lnk: '/categories', lat: 36.06, lng: -112.14 },
+  { name: "Grand Teton", lnk: '/categories/selected_Cat/teton', lat: 43.73, lng: -110.8 },
+  { name: "Rocky Mountain", lnk: '/categories', lat: 40.4, lng: -105.58 },
+  { name: "Saguaro", lnk:'/categories', lat: 32.25, lng: -110.5 },
+  { name:"Yellowstone", lnk:'/categories/selected_Cat/yellowstone', lat :44.6, lng:-110.5 }];
 
 export default function MapPage() {
   return (
@@ -43,7 +44,7 @@ export default function MapPage() {
                   position={[park.lat, park.lng]}
                 >
                   <Popup>
-                    <strong>{park.name}</strong>
+                    <Link href={`${park.lnk}`} className="box">{park.name}</Link>
                   </Popup>
                 </Marker>
               ))}
