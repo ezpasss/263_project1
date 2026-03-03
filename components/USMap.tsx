@@ -22,7 +22,7 @@ const nationalParksData = [
   { name: "Grand Canyon", lnk: '/categories', lat: 36.06, lng: -112.14 },
   { name: "Grand Teton", lnk: '/categories/selected_Cat/teton', lat: 43.73, lng: -110.8 },
   { name: "Rocky Mountain", lnk: '/categories', lat: 40.4, lng: -105.58 },
-  { name: "Saguaro", lnk:'/categories', lat: 32.25, lng: -110.5 },
+  { name: "Saguaro", lnk:'/categories/selected_Cat/saguaro', lat: 32.25, lng: -110.5 },
   { name:"Yellowstone", lnk:'/categories/selected_Cat/yellowstone', lat :44.6, lng:-110.5 }];
 
 export default function MapPage() {
